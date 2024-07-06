@@ -33,20 +33,16 @@ class InstallLanguageFiles extends Command
 
         // Create translations.js
         $jsContent = <<<EOL
-// Function to store selected language in localStorage
 function storeLanguageSelection(langCode) {
     localStorage.setItem('selectedLanguage', langCode);
 }
 
-// Function to load language from localStorage or default to Arabic
 function loadStoredLanguage() {
-    return localStorage.getItem('selectedLanguage') || 'ar'; // Default to Arabic if no selection found
+    return localStorage.getItem('selectedLanguage') || 'ar'; // Default to Arabic
 }
 
-// Default language
-let currentLanguage = loadStoredLanguage(); // Load stored language or default to Arabic
+let currentLanguage = loadStoredLanguage();
 
-// Function to load language JSON based on language code
 function loadLanguage(langCode) {
     return fetch('/lang/' + langCode + '.json')
         .then(response => {
@@ -60,7 +56,6 @@ function loadLanguage(langCode) {
         });
 }
 
-// Function to translate text based on data-translate attribute
 function translateTexts(data) {
     // Translate elements with data-translate attribute
     document.querySelectorAll('[data-translate]').forEach(element => {
@@ -70,7 +65,7 @@ function translateTexts(data) {
         }
     });
 
-    // Example: Translate elements with specific class (if needed)
+    // Translate elements with specific class (if needed)
     document.querySelectorAll('.translate-link').forEach(element => {
         const key = element.getAttribute('data-translate');
         if (data[key]) {
@@ -79,16 +74,11 @@ function translateTexts(data) {
     });
 }
 
-// Function to switch language and set text direction
 function switchLanguage(langCode) {
     loadLanguage(langCode)
         .then(data => {
-            // Update current language
             currentLanguage = langCode;
-            // Store language selection in localStorage
             storeLanguageSelection(langCode);
-
-            // Translate all elements
             translateTexts(data);
 
             // Set text direction
@@ -100,30 +90,22 @@ function switchLanguage(langCode) {
         });
 }
 
-// Function to switch language to Arabic
 function switchToArabic() {
     switchLanguage('ar');
 }
 
-// Function to switch language to English
 function switchToEnglish() {
     switchLanguage('en');
 }
 
-// Function to switch language to Chinese
-function switchToChinese() {
-    switchLanguage('zh');
-}
-
-// Example: Load default language on page load
+// Load default language on page load
 document.addEventListener('DOMContentLoaded', function() {
-    switchLanguage(currentLanguage); // Load stored language or default (Arabic)
+    switchLanguage(currentLanguage);
 });
 
 // Attach click event listeners to language switch buttons
 document.getElementById('englishBtn').addEventListener('click', switchToEnglish);
 document.getElementById('arabicBtn').addEventListener('click', switchToArabic);
-document.getElementById('chineseBtn').addEventListener('click', switchToChinese);
 EOL;
 
         File::put($jsPath.'/translations.js', $jsContent);
