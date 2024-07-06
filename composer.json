@@ -1,0 +1,27 @@
+{
+    "name": "i5z1a/super-language-switcher",
+    "description": "A package to handle super language switching in Laravel",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Khalil Wesam",
+            "email": "khalil.wesam.2007@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "illuminate/support": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "I5z1a\\SuperLanguageSwitcher\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "I5z1a\\SuperLanguageSwitcher\\Providers\\LanguageSwitcherServiceProvider"
+            ]
+        }
+    }
+}
