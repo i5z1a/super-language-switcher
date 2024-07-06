@@ -1,6 +1,6 @@
 <?php
 
-namespace I5z1a\LanguageSwitcher\Commands;
+namespace I5z1a\SuperLanguageSwitcher\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
