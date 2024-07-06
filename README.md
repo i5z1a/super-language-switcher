@@ -13,7 +13,7 @@ Super Language Switcher (SLS) integrates multilingual support into Laravel effor
     You can install the package via Composer. Run this command in your terminal from your project directory:
     
     ```bash
-    composer require i5z1a/super-language-switcher
+    composer require i5z1a/super-language-switcher:dev-main
     ```
 
 2. **Register Service Provider**
