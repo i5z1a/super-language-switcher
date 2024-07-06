@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "I5z1a\\LanguageSwitcher\\": "src/"
+            "I5z1a\\SuperLanguageSwitcher\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "I5z1a\\LanguageSwitcher\\Providers\\LanguageSwitcherServiceProvider"
+                "I5z1a\\SuperLanguageSwitcher\\Providers\\SuperLanguageSwitcherServiceProvider"
             ]
         }
     }
