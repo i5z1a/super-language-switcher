@@ -1,11 +1,11 @@
 <?php
 
-namespace I5z1a\LanguageSwitcher\Providers;
+namespace I5z1a\SuperLanguageSwitcher\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use I5z1a\LanguageSwitcher\Commands\InstallLanguageFiles;
+use I5z1a\SuperLanguageSwitcher\Commands\InstallLanguageFiles;
 
-class LanguageSwitcherServiceProvider extends ServiceProvider
+class SuperLanguageSwitcherServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
